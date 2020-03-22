@@ -29,3 +29,4 @@ jobs:
     - run: npm test
       env:
         CI: true
+    - run: bash <(curl -s https://peek.run/ci) -a storybook
