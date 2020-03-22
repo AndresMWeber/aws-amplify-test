@@ -13,7 +13,9 @@
         <img width="100px" align=center src="https://firebounty.com/image/352-codeclimate-code-climate-security" alt="codeclimate logo">
     </h1>
     <h1 align=center>
-        <a href="https://codeclimate.com/github/AndresMWeber/aws-amplify-test/maintainability"><img src="https://api.codeclimate.com/v1/badges/447ff8caa5ccbea6ea29/maintainability" /></a>
+        <a href="https://codeclimate.com/github/AndresMWeber/aws-amplify-test/maintainability"><img src="https://api.codeclimate.com/v1/badges/447ff8caa5ccbea6ea29/maintainability" />
+        </a>
+        <a href="https://github.com/AndresMWeber/aws-amplify-test/actions?query=workflow%3A%22Node.js+CI%22"><img src="https://github.com/andresmweber/aws-amplify-test/workflows/Node.js%20CI/badge.svg">
     </h1>
 </div>
 
