@@ -6,7 +6,7 @@ module.exports = function(config) {
     DEBUG: `"${process.env.DEBUG}"`,
     ROOT_DOMAIN: process.env.ROOT_DOMAIN
       ? `"${process.env.ROOT_DOMAIN}"`
-      : `"passninja.com"`,
+      : `"http://localhost:4200"`,
     API_BRANCH: process.env.API_BRANCH ? `"${process.env.API_BRANCH}"` : `"v1"`,
     LOCAL_API: `"${process.env.LOCAL_API}"`,
     REGION: `"${process.env.REGION}"`,
