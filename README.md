@@ -9,6 +9,7 @@
         <img width="100px" align=center src="https://angular.io/assets/images/logos/angular/angular.png" alt="angular logo">
         <img width="100px" align=center src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png" alt="TS logo">
         <img width="100px" align=center src="https://raw.githubusercontent.com/featurepeek/documentation/dev/website/static/img/logo.png" alt="featurepeek logo">
+        <img width="100px" align=center src="https://avatars0.githubusercontent.com/u/44036562?s=200&v=4" alt="GithubActions logo">
         <img width="100px" align=center src="https://firebounty.com/image/352-codeclimate-code-climate-security" alt="codeclimate logo">
     </h1>
     <h1 align=center>
