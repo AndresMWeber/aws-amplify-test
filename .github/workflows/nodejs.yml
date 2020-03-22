@@ -5,10 +5,11 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - '*'
   pull_request:
-    branches: [ master ]
-
+    branches:
+      - '*'
 jobs:
   build:
 
@@ -29,4 +30,4 @@ jobs:
     - run: npm test
       env:
         CI: true
-    - run: bash <(curl -s https://peek.run/ci) -a storybook
+    - run: bash <(curl -s https://peek.run/ci)
