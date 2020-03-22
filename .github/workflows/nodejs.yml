@@ -5,10 +5,11 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - '*'
   pull_request:
-    branches: [ master ]
-
+    branches:
+      - '*'
 jobs:
   build:
 
@@ -16,17 +17,40 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: configure amplify
+      uses: ambientlight/amplify-cli-action@0.2.0
+      with:
+        amplify_command: configure
+        amplify_env: prod
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+          
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    
+    - uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install # will run `yarn install` command
+    
+    - run: sudo npm run build --if-present
       env:
         CI: true
-    - run: bash <(curl -s https://peek.run/ci) -a storybook
+    
+    - run: bash <(curl -s https://peek.run/ci)
