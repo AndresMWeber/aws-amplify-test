@@ -23,6 +23,9 @@
 
 I created this project as a testbed for AWS front end development using Amplify. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
+It also features a test configuration for FeaturePeek so you can see different snapshots of the website when a PR is made.
+
+
 ## 📝 Table of Contents
 - [About](#about)
 - [Built Using](#built_using)
