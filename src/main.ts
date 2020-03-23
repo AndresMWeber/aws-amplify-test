@@ -4,16 +4,16 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import Amplify, { Auth } from 'aws-amplify';
+import Amplify from 'aws-amplify';
 
 Amplify.configure({
   Auth: {
     // OPTIONAL - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
     authenticationFlowType: 'USER_PASSWORD_AUTH',
-    identityPoolId: 'us-east-1:cd433801-c210-4e9f-be27-8890ec5d5e27',
     region: 'us-east-1',
     userPoolId: 'us-east-1_TvKB4As8Y',
     userPoolWebClientId: '60qdq2vuiohvk36ocadnfe293b',
+    identityPoolId: 'us-east-1:d5d836d2-f672-48fc-8a68-1e511e37affa',
     mandatorySignIn: true,
     oauth: {
       domain: 'amplify-app-test-existing.auth.us-east-1.amazoncognito.com',
