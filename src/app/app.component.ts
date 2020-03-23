@@ -19,7 +19,7 @@ export class AppComponent {
       path: '/'
     },
     {
-      title: 'My Account (Part 2)',
+      title: 'My Account',
       path: '/auth'
     }
   ];

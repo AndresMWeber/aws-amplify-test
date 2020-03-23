@@ -15,7 +15,7 @@ Storage.configure({
     authenticationFlowType: 'USER_PASSWORD_AUTH',
     region: 'us-east-1',
     userPoolId: 'us-east-1_TvKB4As8Y',
-    userPoolWebClientId: '60qdq2vuiohvk36ocadnfe293b',
+    userPoolWebClientId: '40k1jakv53rne4rcvuno1licj3',
     identityPoolId: 'us-east-1:d5d836d2-f672-48fc-8a68-1e511e37affa',
     mandatorySignIn: true,
     oauth: {
