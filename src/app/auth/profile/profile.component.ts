@@ -53,13 +53,14 @@ export class ProfileComponent implements OnInit {
   async getUserInfo() {
     this.profile = await Auth.currentUserInfo();
     this.user = await Auth.currentAuthenticatedUser();
-    if (this.profile.attributes['profile']) {
-      this.avatar = this.profile.attributes['profile'];
+    console.log(this.profile, this.user);
+    if (this.profile.attributes.profile) {
+      this.avatar = this.profile.attributes.profile;
       this.currentAvatarUrl = (await Storage.vault.get(this.avatar)) as string;
     }
-    this.fnameInput.setValue(this.profile.attributes['given_name']);
-    this.lnameInput.setValue(this.profile.attributes['family_name']);
-    this.phoneInput.setValue(this.profile.attributes['phone_number']);
+    this.fnameInput.setValue(this.profile.attributes.given_name);
+    this.lnameInput.setValue(this.profile.attributes.family_name);
+    this.phoneInput.setValue(this.profile.attributes.phone_number);
     this.loading.hide();
   }
 
