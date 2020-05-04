@@ -1,7 +1,8 @@
 import { config } from 'aws-sdk';
 
 // @ts-ignore
-console.log(DEBUG, ROOT_DOMAIN, IDENTITY_POOL_ID, FEDERATION, USER_POOL_ID, USER_POOL_ID);
+console.log(DEBUG, ROOT_DOMAIN, IDENTITY_POOL_ID, FEDERATION, USER_POOL_ID, USER_POOL_ID
+);
 
 // @ts-ignore
 config.region = REGION || 'us-east-1';

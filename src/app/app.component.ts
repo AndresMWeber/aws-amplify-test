@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AmplifyService } from 'aws-amplify-angular';
-import { ConfigurationService } from './shared/services/config.service';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +9,43 @@ import { ConfigurationService } from './shared/services/config.service';
 })
 export class AppComponent {
   title = 'aws-amplify-app';
-  constructor(
-    public amplify: AmplifyService,
-    public config: ConfigurationService
-  ) {
-    amplify
+  signedIn: boolean;
+  user: any;
+  greeting: string;
+  mobileQuery: MediaQueryList;
+  nav = [
+    {
+      title: 'Home',
+      path: '/'
+    },
+    {
+      title: 'My Account',
+      path: '/auth'
+    }
+  ];
+  @Output() toggleSideNav = new EventEmitter();
+
+  constructor(public amplifyService: AmplifyService) {
+    amplifyService
       .auth()
       .currentAuthenticatedUser()
       .then(console.log)
       .catch(console.log);
-    console.log(config);
+
+    this.amplifyService.authStateChange$.subscribe(authState => {
+      this.signedIn = authState.state === 'signedIn';
+      if (!authState.user) {
+        this.user = null;
+      } else {
+        this.user = authState.user;
+        this.greeting = `Hello are you: ${this.user.username}?`;
+      }
+    });
+  }
+
+  toggleMobileNav(nav: MatSidenav) {
+    if (false) {
+      nav.toggle();
+    }
   }
 }
